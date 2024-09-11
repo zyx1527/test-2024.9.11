@@ -1,0 +1,9 @@
+---
+- hosts: Kainan
+  tasks:
+          #    - lineinfile: path=/etc/mount_vip_fs.sh line='mount cdipd-nas01:/IPD_home /home101'
+          #    - lineinfile: path=/etc/mount_vip_fs.sh line='mount cdipd-nas01:IPD_home/staging /home/staging'
+          #    - lineinfile: path=/etc/mount_vip_fs.sh line='mount cdipd-nas01:IPD_home/release /home/release'
+          #    - lineinfile: path=/etc/mount_vip_fs.sh line='mount cdipd-nas01:/SQATOOLCHAIN /home/software'
+    - lineinfile: path=/etc/mount_vip_fs.sh regexp='10.10.42.62:/vol/QA_Data_in' state=absent
+    - lineinfile: path=/etc/mount_vip_fs.sh line='mount -o ro 10.10.163.1:/QA_Data_in /sqa_in'
