@@ -1,0 +1,5 @@
+---
+- hosts: all
+  tasks:
+    - replace: path=/etc/ssh/sshd_config regexp="PermitRootLogin prohibit-password" replace="PermitRootLogin yes"
+    - service: name=ssh state=restarted
